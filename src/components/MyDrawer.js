@@ -7,7 +7,6 @@ import ListItem from '@material-ui/core/ListItem';
 import yourname from '../assets/yourname.png';
 import {Link as RouterLink} from 'react-router-dom'
 import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   list: {
@@ -31,7 +30,7 @@ function TemporaryDrawer(props) {
       onClick={props.toggleDrawer(false)}
       onKeyDown={props.toggleDrawer(false)}
     >
-      <img src={yourname}></img>
+      <img src={yourname} alt=""></img>
       <Divider />
       <List>
           <ListItem><Link style={{color:'black', textDecoration:'none'}}  variant="h6" component={RouterLink} to="/">All Anime</Link></ListItem>

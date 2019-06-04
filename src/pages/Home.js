@@ -1,34 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Search from '../components/Search';
 import AnimeList from '../components/AnimeList';
 
 
-function Home() {
-  
-  var [animes, setAnimes]= useState(
-    [
-      {
-        key:1,
-        image:'oi',
-        title:'Test',
-        status:'Watched',
-        text:'tesasdaskdjaslkaasdkjasdklasda'
-      },
-      {
-        key:1,
-        image:'oi',
-        title:'Test',
-        status:'Watched',
-        text:'tesasdaskdjaslkaasdkjasdklasda'
-      }
-    ]
-  )
+function Home(props) {
   
   return (
     <div >
         <br/>
         <Search/>
-        <AnimeList list={animes} />
+        <AnimeList list={props.animes} />
     </div>
   );
 }

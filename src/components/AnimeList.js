@@ -22,12 +22,12 @@ const useStyles = makeStyles(theme => ({
 
 let Card = (props) => {
      let classes = useStyles();
-       let {image,title, status,text} = props.anime;
+     let {image,title, status,text} = props.anime;
     return(
         
-            <ListItem alignItems="flex-start">
+            <>
                 <ListItemAvatar>
-                <Avatar alt="Remy Sharp" src={image} />
+                <Avatar alt="Remy Sharp" src={`${image}`}/>
                 </ListItemAvatar>
                 <ListItemText
                 primary={
@@ -47,7 +47,7 @@ let Card = (props) => {
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Typography
                         component="span"
-                        variant="body3"
+                        variant="body2"
                         className={classes.inline}
                         color="textSecondary"
                         >
@@ -71,20 +71,22 @@ let Card = (props) => {
                 }
                 />
                 <Divider/>
-            </ListItem>
+            </>
     );
 }
 function AnimeList(props){
     let classes = useStyles();
-
-    let {list} = props;
+    
+    
     return(
         <Container>
             <List className={classes.root}> 
                 {
-                    list.map(item => {
+                    props.list.map(item => {
                         return(
-                            <Card  key={item.key} anime={item}/>
+                            <ListItem key={item.key}  alignItems="flex-start">
+                                <Card anime={item}/>
+                            </ListItem>
                         );
                     })
                 }
